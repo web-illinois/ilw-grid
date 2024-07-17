@@ -1,13 +1,13 @@
 {
-    "name": "@illinois-toolkit/<%= name %>",
+    "name": "@illinois-toolkit/ilw-grid",
     "description": "One paragraph description of the component.",
-    "repository": "github:<%= repository %>",
+    "repository": "github:web-illinois/ilw-grid",
     "private": false,
     "version": "0.0.1",
     "type": "module",
     "exports": {
         ".": {
-            "import": "./src/<%= name %>.js"
+            "import": "./src/ilw-grid.js"
         }
     },
     "scripts": {
