@@ -44,7 +44,10 @@ Attributes are:
 
 Items inside the grid should remain in semantic order. Do not attempt to change the order of the components by using CSS `direction: rtl` or ordering. 
 
+This is using the manual slot assignment process. Because of this, you may need to run the `ilwgrid.refresh()` method to refresh the grid if you add or remove nodes in the light DOM. If you edit items inside the grid, you do not need to run any extra javascript. 
+
 ## External References
 * https://developer.mozilla.org/en-US/docs/Web/CSS/grid
 * https://www.nngroup.com/articles/using-grids-in-interface-designs/ (see Example 3: Modular Grid)
 * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow#slotassignment

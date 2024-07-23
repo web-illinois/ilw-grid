@@ -30,12 +30,34 @@ class Grid extends LitElement {
         return Array.from(this.children);
     } 
 
-    updated(changed) {
+    refresh() {
+        let items = this._items;
+        let slots = Array.from(this.shadowRoot.querySelectorAll('slot'));
+        if (items.length > slots.length) {
+            let ul = this.shadowRoot.querySelector('ul.grid');
+            for (let i = slots.length; i < items.length; i++) {
+                let div = document.createElement('div');
+                div.appendChild(document.createElement('slot'));
+                let li = document.createElement('li');
+                li.appendChild(div);
+                ul.appendChild(li);
+            }
+        }
+        this._refreshInternal();
+    }
+
+    _refreshInternal() {
         let items = this._items;
         let slots = Array.from(this.shadowRoot.querySelectorAll('slot'));
         for (let slot of slots) {
-          slot.assign(items.shift());
+          if (items.length > 0) {
+            slot.assign(items.shift());
+          }
         }
+    }
+
+    updated(changed) {
+        this._refreshInternal();
     }
 
     get paddingStyle() {
@@ -58,7 +80,7 @@ class Grid extends LitElement {
       return html`
       <div class="grid-outer ${this.theme} ${this.outerWidth}">
           <ul class="grid ${this.gridWidth} ${this.align}" style="${this.templateColumnStyle} ${this.paddingStyle}">
-            ${map(this._items, () => html`<li><div class="grid-inner"><slot></slot></div></li>`)}
+            ${map(this._items, () => html`<li><div><slot></slot></div></li>`)}
           </ul>
       </div>
       `;

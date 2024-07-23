@@ -33,10 +33,28 @@
         }
       });
     });
+
+    function loadNewDiv() {
+        const newDiv = document.createElement('div');
+        newDiv.className = 'test';
+        newDiv.innerHTML = '<h3>New Item</h3><p>Consectetur adipiscing elit. Donec posuere dui mauris, eu scelerisque mauris mattis in. Nunc sed leo arcu. Nulla non eleifend sapien.</p>';
+        document.getElementById('test-item').appendChild(newDiv);
+        document.getElementById('test-item').refresh();
+    }
+    
+    function removeDiv() {
+        document.getElementById('test-item').children[0].remove();
+        document.getElementById('test-item').refresh();
+    }
+
+    function editDiv() {
+        let div = document.getElementById('test-item').children[0];
+        div.innerHTML = '<h3>Edited Item</h3><p>Maecenas a mollis quam, eu venenatis lorem.</p>';
+    }
 </script>
   
   <body style="margin: 0 auto; padding: 0; max-width: 1200px;">
-      <ilw-grid>
+      <ilw-grid id="test-item">
         <div class="test"><h3>Lorem ipsum dolor sit amet</h3><p>Consectetur adipiscing elit. <div>Donec posuere dui mauris, eu scelerisque mauris mattis in. Nunc sed leo arcu. Nulla non eleifend sapien.</div> </p></div>
         <div class="test"><h3>Lorem ipsum dolor sit amet</h3><p>Nunc sed leo arcu. Nulla non eleifend sapien. </p></div>
         <div class="test"><h3>Mauris</h3><p>Maecenas a mollis quam, eu venenatis lorem.</p></div>
@@ -48,6 +66,10 @@
         <div class="test"><h3>Suspendisse </h3><p>Integer et velit sapien. Cras sed lacus dui. Etiam at malesuada nisi, id faucibus nisi. Vivamus at mi a purus elementum blandit vitae vitae sem. In accumsan quam in nisl rhoncus, sed mattis quam ornare. Etiam velit orci, rutrum sit amet nunc ac, rutrum venenatis est. Nam viverra orci vel purus commodo facilisis. Duis suscipit tincidunt tortor, non iaculis mauris ultricies in. Vivamus tellus enim, congue eget hendrerit sit amet, consequat et mi. </p></div>
         <div class="test"><h3>Integer et</h3><p> Aliquam sodales lorem condimentum pellentesque pretium. Praesent id lacus non lorem pharetra condimentum id quis nisl.</p></div>
      </ilw-grid>
+
+     <button class="ilw-button" onclick="removeDiv()">Remove Item</button>
+     <button class="ilw-button" onclick="loadNewDiv()">Add New Item</button>
+     <button class="ilw-button" onclick="editDiv()">Edit Item</button>
 </body>
 
 </html>

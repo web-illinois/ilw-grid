@@ -15,7 +15,7 @@ export default css`
     width: 100%;
   }
 
-  ul.grid li div.grid-inner {
+  ul.grid li > div {
     flex-grow: 1;
   }
 
