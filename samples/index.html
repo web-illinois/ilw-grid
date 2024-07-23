@@ -51,6 +51,11 @@
         let div = document.getElementById('test-item').children[0];
         div.innerHTML = '<h3>Edited Item</h3><p>Maecenas a mollis quam, eu venenatis lorem.</p>';
     }
+
+    function changeAttribute() {
+        let div = document.getElementById('test-item');
+        div.setAttribute('theme', 'orange');
+    }
 </script>
   
   <body style="margin: 0 auto; padding: 0; max-width: 1200px;">
@@ -70,6 +75,7 @@
      <button class="ilw-button" onclick="removeDiv()">Remove Item</button>
      <button class="ilw-button" onclick="loadNewDiv()">Add New Item</button>
      <button class="ilw-button" onclick="editDiv()">Edit Item</button>
+     <button class="ilw-button" onclick="changeAttribute()">Change Attribute</button>
 </body>
 
 </html>

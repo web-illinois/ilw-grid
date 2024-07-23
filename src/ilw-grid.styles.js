@@ -23,10 +23,6 @@ export default css`
     margin: var(--ilw-grid--main-margin, 0);
   }
 
-  ul.grid.center {
-    margin: var(--ilw-grid--main-margin, 0);
-  }
-
   .grid-outer.fixed {
         left:50%;
         margin-left:-50vw;
