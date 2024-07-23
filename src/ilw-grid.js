@@ -79,7 +79,7 @@ class Grid extends LitElement {
     render() {
       return html`
       <div class="grid-outer ${this.theme} ${this.outerWidth}">
-          <ul class="grid ${this.gridWidth} ${this.align}" style="${this.templateColumnStyle} ${this.paddingStyle}">
+          <ul class="grid ${this.gridWidth}" style="${this.templateColumnStyle} ${this.paddingStyle}">
             ${map(this._items, () => html`<li><div><slot></slot></div></li>`)}
           </ul>
       </div>
