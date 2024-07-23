@@ -22,7 +22,6 @@ Attributes are:
 * **innerwidth:** standard length / percentage CSS, defaults to 350px
 * **width:** no width attribute will make it fit the container, `full` will break the container and go full width, and `auto` will break the container, but only for the background
 * **theme:** `blue`, `orange`, `blue-gradient`, `orange-gradient`, `gray`, `white`. Defaults to `white`. This is only the background of the grid. 
-* **align:** `left` or `center`, defaults to left. This aligns the grid itself in regards to the container that holds it, not the items themselves. 
 * **padding:** standard length / percentage CSS of padding around the grid. Defaults to no padding
 
 ## Code Examples

@@ -4,7 +4,7 @@
     "github": "https://github.com/web-illinois/ilw-grid/",
     "type": "web component",
     "element-name": "ilw-grid",
-    "description": "Description for builder.",
+    "description": "Creates a grid of items that you can use to display information.",
     "version": "1.0.0-alpha",
     "date": "07/17/2024",
     "css": "https://dev.toolkit.illinois.edu/ilw-grid/1.0.0-alpha/ilw-grid.css",
@@ -16,23 +16,50 @@
         {
             "name": "default",
             "description": "Default information",
-            "text": "<p>Lorem ipsum</p>"
+            "text": "<div style='background: white; border: thin solid black; padding: 10px;'><h3>Lorem ipsum dolor sit amet</h3><p>Consectetur adipiscing elit. <div>Donec posuere dui mauris, eu scelerisque mauris mattis in. Nunc sed leo arcu. Nulla non eleifend sapien.</div> </p></div><div style='background: white; border: thin solid black; padding: 10px;'><h3>Lorem ipsum dolor sit amet</h3><p>Nunc sed leo arcu. Nulla non eleifend sapien. </p></div><div style='background: white; border: thin solid black; padding: 10px;'><h3>Mauris</h3><p>Maecenas a mollis quam, eu venenatis lorem.</p></div><div style='background: white; border: thin solid black; padding: 10px;'><h3>Suspendisse </h3><p>Integer et velit sapien. Cras sed lacus dui. Etiam at malesuada nisi, id faucibus nisi. Vivamus at mi a purus elementum blandit vitae vitae sem. In accumsan quam in nisl rhoncus, sed mattis quam ornare. Etiam velit orci, rutrum sit amet nunc ac, rutrum venenatis est. Nam viverra orci vel purus commodo facilisis. Duis suscipit tincidunt tortor, non iaculis mauris ultricies in. Vivamus tellus enim, congue eget hendrerit sit amet, consequat et mi. </p></div><div style='background: white; border: thin solid black; padding: 10px;'><h3>Integer et</h3><p> Aliquam sodales lorem condimentum pellentesque pretium. Praesent id lacus non lorem pharetra condimentum id quis nisl.</p></div><div style='background: white; border: thin solid black; padding: 10px;'><h3>Lorem ipsum dolor sit amet</h3><p>Consectetur adipiscing elit. Donec posuere dui mauris, eu scelerisque mauris mattis in. Nunc sed leo arcu. Nulla non eleifend sapien. </p></div><div style='background: white; border: thin solid black; padding: 10px;'><h3>Lorem ipsum dolor sit amet</h3><p>Nunc sed leo arcu. Nulla non eleifend sapien. </p></div><div style='background: white; border: thin solid black; padding: 10px;'><h3>Mauris</h3><p>Maecenas a mollis quam, eu venenatis lorem.</p></div><div style='background: white; border: thin solid black; padding: 10px;'><h3>Suspendisse </h3><p>Integer et velit sapien. Cras sed lacus dui. Etiam at malesuada nisi, id faucibus nisi. Vivamus at mi a purus elementum blandit vitae vitae sem. In accumsan quam in nisl rhoncus, sed mattis quam ornare. Etiam velit orci, rutrum sit amet nunc ac, rutrum venenatis est. Nam viverra orci vel purus commodo facilisis. Duis suscipit tincidunt tortor, non iaculis mauris ultricies in. Vivamus tellus enim, congue eget hendrerit sit amet, consequat et mi. </p></div><div style='background: white; border: thin solid black; padding: 10px;'><h3>Integer et</h3><p> Aliquam sodales lorem condimentum pellentesque pretium. Praesent id lacus non lorem pharetra condimentum id quis nisl.</p></div>"
         }
     ],
     "attributes-fixed": [],
-    "attributes-text": [],
+    "attributes-text": [
+        {
+			"name": "innerwidth",
+			"description": "Width of the items inside the grid, defaults to 250px",
+			"depreciated": false,
+			"value": ""
+		},
+        {
+			"name": "padding",
+			"description": "Padding of the text inside the component",
+			"depreciated": false,
+			"value": ""
+		}
+
+    ],
     "attributes": [
         {
-            "name": "theme",
-            "description": "Color theme used",
-            "depreciated": false,
-            "values": [
-                "",
-                "blue",
-                "orange",
-                "white"
-            ]
-        }
+			"name": "theme",
+			"description": "Color theme used",
+			"depreciated": false,
+			"values": [
+				"",
+				"blue",
+				"orange",
+				"blue-gradient",
+				"orange-gradient",
+				"gray",
+				"white"
+			]
+		},
+		{
+			"name": "width",
+			"description": "Width of component",
+			"depreciated": false,
+			"values": [
+				"",
+				"full",
+				"auto"
+			]
+		}
     ],
     "classes-fixed": [],
     "classes": [],

@@ -4,7 +4,7 @@
     "github": "https://github.com/web-illinois/ilw-grid/",
     "type": "web component",
     "element-name": "ilw-grid",
-    "description": "Description for builder.",
+    "description": "Creates a grid of items that you can use to display information.",
     "toolkit-version": "",
     "production-version": "",
     "development-version": "1.0.0-alpha"
