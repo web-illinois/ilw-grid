@@ -39,12 +39,10 @@
         newDiv.className = 'test';
         newDiv.innerHTML = '<h3>New Item</h3><p>Consectetur adipiscing elit. Donec posuere dui mauris, eu scelerisque mauris mattis in. Nunc sed leo arcu. Nulla non eleifend sapien.</p>';
         document.getElementById('test-item').appendChild(newDiv);
-        document.getElementById('test-item').refresh();
     }
     
     function removeDiv() {
         document.getElementById('test-item').children[0].remove();
-        document.getElementById('test-item').refresh();
     }
 
     function editDiv() {
