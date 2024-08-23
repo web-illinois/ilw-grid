@@ -1,19 +1,27 @@
 {
     "name": "@illinois-toolkit/ilw-grid",
-    "description": "One paragraph description of the component.",
+    "description": "Illinois Toolkit: Creates a grid of items that you can use to display information.",
     "repository": "github:web-illinois/ilw-grid",
     "private": false,
-    "version": "0.0.1",
+    "version": "1.0.0-alpha",
     "type": "module",
+    "files": [
+      "src/**",
+      "dist/**",
+      "builder/**"
+    ],
     "exports": {
         ".": {
-            "import": "./src/ilw-grid.js"
+            "import": "./src/ilw-grid.js",
+            "require": "./src/ilw-grid.js",
+            "default": "./src/ilw-grid.js"
         }
     },
     "scripts": {
         "dev": "vite",
         "build": "vite build --config vite.build.config.js --emptyOutDir",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "prepack": "npm run build"
     },
     "dependencies": {
         "lit": "3.1.3"
