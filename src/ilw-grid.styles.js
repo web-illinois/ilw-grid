@@ -20,7 +20,7 @@ export default css`
   }
 
   ul.grid.fixed {
-    margin: var(--ilw-grid--main-margin, 0);
+    margin: 0 var(--ilw-margin--side, 0);
   }
 
   .grid-outer.fixed {

@@ -3,7 +3,7 @@
     "description": "Illinois Toolkit: Creates a grid of items that you can use to display information.",
     "repository": "github:web-illinois/ilw-grid",
     "private": false,
-    "version": "1.0.0-alpha",
+    "version": "1.0.0-alpha1",
     "type": "module",
     "files": [
       "src/**",

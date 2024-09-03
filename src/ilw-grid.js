@@ -1,7 +1,6 @@
 import { LitElement, html } from 'lit';
 import { map } from 'lit/directives/map.js';
 import styles from './ilw-grid.styles';
-import './ilw-grid.css';
 import { ManualSlotController } from "./ManualSlotController.js";
 
 class Grid extends LitElement {
@@ -11,6 +10,7 @@ class Grid extends LitElement {
             theme: { type: String, attribute: true },
             innerwidth: { type: String, attribute: true },
             width: { type: String, attribute: true },
+            gap: { type: String, attribute: true },
             padding: { type: String, attribute: true }
         };
     }
@@ -26,11 +26,16 @@ class Grid extends LitElement {
         this.theme = '';
         this.innerwidth = '250px';
         this.width = '';
-        this.padding = '';
+        this.gap = '';
+        this.padding = '0 0 40px 0';
     }
 
     get paddingStyle() {
         return this.padding == '' ? '' : 'padding: ' + this.padding + ';';
+    }
+
+    get gapStyle() {
+      return this.gap == '' ? '' : 'column-gap: ' + this.gap + ';';
     }
 
     get templateColumnStyle() {
@@ -42,13 +47,13 @@ class Grid extends LitElement {
     }
   
     get gridWidth() {
-      return this.width == 'auto' ? 'fixed' : '';
+      return this.width == 'auto' || this.width == 'page' ? 'fixed' : '';
     }
 
     render() {
       return html`
       <div class="grid-outer ${this.theme} ${this.outerWidth}">
-          <ul class="grid ${this.gridWidth}" style="${this.templateColumnStyle} ${this.paddingStyle}">
+          <ul class="grid ${this.gridWidth}" style="${this.templateColumnStyle} ${this.gapStyle} ${this.paddingStyle}">
             ${map(Array.from(this.children), () => html`<li><div><slot></slot></div></li>`)}
           </ul>
       </div>
