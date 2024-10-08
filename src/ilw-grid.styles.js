@@ -4,7 +4,7 @@ export default css`
   ul.grid {
     display: grid;
     list-style: none;
-    grid-gap: 10px;
+    grid-gap: var(--ilw-grid--gap, 0);
     margin: 0;
     padding: 0;
   }
@@ -24,14 +24,14 @@ export default css`
   }
 
   .grid-outer.fixed {
-        left:50%;
-        margin-left:-50vw;
-        margin-right:-50vw;
-        padding-left:0;
-        padding-right:0;
-        position:relative;
-        right:50%;
-        width:100vw;
+        left: 50%;
+        margin-left: calc(-50vw + 10px);
+        margin-right: calc(-50vw + 10px);
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        right: 50%;
+        width: calc(100vw - 20px);
     }
 
   .grid-outer.blue {
