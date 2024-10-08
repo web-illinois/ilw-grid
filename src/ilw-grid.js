@@ -35,7 +35,7 @@ class Grid extends LitElement {
     }
 
     get gapStyle() {
-      return this.gap == '' ? '' : 'column-gap: ' + this.gap + ';';
+      return this.gap == '' ? '10px' : this.gap;
     }
 
     get templateColumnStyle() {
@@ -52,8 +52,9 @@ class Grid extends LitElement {
 
     render() {
       return html`
+      <style>:host { --ilw-grid--gap: ${this.gapStyle}; } </style>
       <div class="grid-outer ${this.theme} ${this.outerWidth}">
-          <ul class="grid ${this.gridWidth}" style="${this.templateColumnStyle} ${this.gapStyle} ${this.paddingStyle}">
+          <ul class="grid ${this.gridWidth}" style="${this.templateColumnStyle} ${this.paddingStyle}">
             ${map(Array.from(this.children), () => html`<li><div><slot></slot></div></li>`)}
           </ul>
       </div>
