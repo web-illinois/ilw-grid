@@ -35,7 +35,7 @@ class Grid extends LitElement {
     }
 
     get gapStyle() {
-      return this.gap == '' ? '0' : this.gap;
+      return this.gap == '' ? '10px' : this.gap;
     }
 
     get templateColumnStyle() {

@@ -4,7 +4,7 @@ export default css`
   ul.grid {
     display: grid;
     list-style: none;
-    grid-gap: var(--ilw-grid--gap, 0);
+    grid-gap: var(--ilw-grid--gap, 10px);
     margin: 0;
     padding: 0;
   }

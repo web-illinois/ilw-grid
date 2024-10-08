@@ -47,6 +47,8 @@ Items inside the grid should remain in semantic order. Do not attempt to change 
 
 The items in the grid are in an unordered list so assistive technology can help the end user navigate through a large list of items. 
 
+We spoke about including lists versus headers, and it was decided that having both would be overkill. So you probably don't need to add headers to the contents of the grid. 
+
 This is using the manual slot assignment process using the MutationObserver interface to watch for changes in the DOM. 
 
 ## External References
