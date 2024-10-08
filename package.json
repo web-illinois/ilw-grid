@@ -4,7 +4,7 @@
     "repository": "github:web-illinois/ilw-grid",
     "private": false,
     "license": "MIT",
-    "version": "1.0.0-beta",
+    "version": "1.0.1-beta",
     "type": "module",
     "files": [
       "src/**",
