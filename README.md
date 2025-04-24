@@ -41,6 +41,17 @@ Attributes are:
 </ilw-grid>
 ```
 
+## CSS-only grid
+
+You can also create `<div>` or `<ul>` with a grid without using the ilw-grid component by using the `ilw-grid` class. 
+
+This is in the ilw-grid layer, so you can use the [layer syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) to control how this cascades with other CSS layers. 
+
+The column gap is 10px, but can be changed via the `--ilw-grid--gap` CSS variable. The grid template columns is set to 250px / 1fr, but can be changed via the `--ilw-grid--template-columns` CSS variable.
+
+### CSS-only helper classes
+* **ilw-fixed**: Puts margins around the grid
+
 ## Accessibility Notes and Use
 
 Items inside the grid should remain in semantic order. Do not attempt to change the order of the components by using CSS `direction: rtl` or ordering. 

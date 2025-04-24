@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit';
 import { map } from 'lit/directives/map.js';
 import styles from './ilw-grid.styles';
 import { ManualSlotController } from "./ManualSlotController.js";
+import './ilw-grid.css';
 
 class Grid extends LitElement {
     static shadowRootOptions = {...LitElement.shadowRootOptions, slotAssignment: "manual"};
