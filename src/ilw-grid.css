@@ -1,0 +1,18 @@
+@layer ilw-grid {
+  ul.ilw-grid, div.ilw-grid {
+    display: grid;
+    list-style: none;
+    grid-gap: var(--ilw-grid--gap, 10px);
+    margin: 0;
+    padding: 0;
+    grid-template-columns: var(--ilw-grid--template-columns, repeat(auto-fit, minmax(250px, 1fr)));
+  }
+
+  ul.ilw-grid li {
+    list-style: none;
+  }
+
+  ul.ilw-grid.ilw-fixed, div.ilw-grid.ilw-fixed {
+    margin: 0 var(--ilw-margin--side, 0);
+  }
+}
