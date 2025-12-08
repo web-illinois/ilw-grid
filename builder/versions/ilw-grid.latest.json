@@ -6,7 +6,7 @@
     "element-name": "ilw-grid",
     "description": "Creates a grid of items that you can use to display information.",
     "builder-version": "latest",
-    "version": "1.2.2-beta",
+    "version": "1.2.3-beta",
     "date": "10/08/2024",
     "css": "https://dev.toolkit.illinois.edu/ilw-grid/latest/ilw-grid.css",
     "js": "https://dev.toolkit.illinois.edu/ilw-grid/latest/ilw-grid.js",
