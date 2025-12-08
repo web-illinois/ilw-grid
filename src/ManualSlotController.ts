@@ -1,3 +1,5 @@
+import { LitElement, ReactiveController, ReactiveControllerHost } from "lit";
+
 /**
  * A simple Lit reactive controller to apply manual slotting to a component.
  *
@@ -15,29 +17,17 @@
  * ${map(Array.from(this.children), () => html`<li><slot></slot></li>`)}
  * ```
  */
-export class ManualSlotController {
-    /**
-     * @type import("lit").LitElement
-     * @private
-     */
-    _host;
+export class ManualSlotController implements ReactiveController {
+    host: LitElement;
 
-    /**
-     * @type MutationObserver
-     * @private
-     */
-    _observer;
+    private observer: MutationObserver;
 
-    /**
-     * @param {import("lit").LitElement} host
-     */
-    constructor(host) {
-        this._host = host;
-        this._observer = new MutationObserver((list) => {
-            this._host.requestUpdate();
+    constructor(host: ReactiveControllerHost) {
+        this.host = host as LitElement;
+        this.host.addController(this);
+        this.observer = new MutationObserver(() => {
+            this.host.requestUpdate();
         });
-        // This binds the controller to the element's lifecycle
-        host.addController(this);
     }
 
     /**
@@ -48,11 +38,16 @@ export class ManualSlotController {
      * @private
      */
     _refreshInternal() {
-        let items = Array.from(this._host.children);
-        let slots = Array.from(this._host.shadowRoot.querySelectorAll('slot'));
-        for (let slot of slots) {
-            if (items.length > 0) {
-                slot.assign(items.shift());
+        let items = Array.from(this.host.children);
+        if (this.host?.shadowRoot) {
+            let slots = Array.from(this.host.shadowRoot.querySelectorAll("slot"));
+            for (let slot of slots) {
+                if (items.length > 0) {
+                    let item = items.shift();
+                    if (item) {
+                        slot.assign(item);
+                    }
+                }
             }
         }
     }
@@ -63,10 +58,10 @@ export class ManualSlotController {
     }
 
     hostConnected() {
-        this._observer.observe(this._host, {childList: true});
+        this.observer.observe(this.host, { childList: true });
     }
 
     disconnect() {
-        this._observer.disconnect();
+        this.observer.disconnect();
     }
 }

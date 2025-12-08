@@ -1,6 +1,6 @@
 import { css } from 'lit';
 
-export default css`
+export default css `
   ul.grid {
     display: grid;
     list-style: none;
@@ -23,6 +23,10 @@ export default css`
     margin: 0 var(--ilw-margin--side, 0);
   }
 
+  .grid-outer {
+      background-color: var(--ilw-color--background);
+  }
+
   .grid-outer.fixed {
         left: 50%;
         margin-left: calc(-50vw + 10px);
@@ -34,24 +38,6 @@ export default css`
         width: calc(100vw - 20px);
     }
 
-  .grid-outer.blue {
-        background-color: var(--il-blue);
-    }
-
-  .grid-outer.orange {
-      background-color: var(--il-orange);
-  }
-
-  .grid-outer.blue-gradient {
-      background: var(--il-gradient-blue), var(--il-blue-darker-1);
-  }
-  .grid-outer.orange-gradient {
-      background: var(--il-gradient-orange), var(--il-altgeld);
-  }
-  
-  .grid-outer.gray {
-      background-color: var(--il-storm-lighter-4);
-  }
 
   ::slotted(*) {
     height: 100%;
