@@ -1,26 +1,34 @@
-import { LitElement, html } from 'lit';
+import { LitElement, html, unsafeCSS } from 'lit';
 import { map } from 'lit/directives/map.js';
 import styles from './ilw-grid.styles';
-import { ManualSlotController } from "./ManualSlotController.js";
+import { ManualSlotController } from "./ManualSlotController";
 import './ilw-grid.css';
 
-class Grid extends LitElement {
-    static shadowRootOptions = {...LitElement.shadowRootOptions, slotAssignment: "manual"};
-    static get properties() {
-        return {
-            theme: { type: String, attribute: true },
-            innerwidth: { type: String, attribute: true },
-            width: { type: String, attribute: true },
-            gap: { type: String, attribute: true },
-            padding: { type: String, attribute: true }
-        };
-    }
+import { customElement, property, query, state } from "lit/decorators.js";
+@customElement('ilw-grid')
+export default class Grid extends LitElement {
+    static shadowRootOptions: ShadowRootInit = { ...LitElement.shadowRootOptions, slotAssignment: "manual" };
+
+    @property() 
+    theme: string = "";
+
+    @property() 
+    innerwidth: string = "";
+
+    @property() 
+    width: string = "";
+
+    @property() 
+    gap: string = "";
+
+    @property() 
+    padding: string = "";
 
     static get styles() {
         return styles;
     }
 
-    _observer = new ManualSlotController(this);
+    private manual = new ManualSlotController(this);
 
     constructor() {
         super();
@@ -63,4 +71,8 @@ class Grid extends LitElement {
     }
 }
 
-customElements.define('ilw-grid', Grid);
+declare global {
+interface HTMLElementTagNameMap {
+    "ilw-grid": Grid;
+  }
+}

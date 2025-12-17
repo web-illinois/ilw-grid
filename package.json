@@ -4,7 +4,7 @@
     "repository": "github:web-illinois/ilw-grid",
     "private": false,
     "license": "MIT",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "type": "module",
     "files": [
       "src/**",
@@ -16,18 +16,36 @@
             "import": "./src/ilw-grid.js",
             "require": "./src/ilw-grid.js",
             "default": "./src/ilw-grid.js"
+        },
+        "./ilw-grid.css": {
+            "import": "./dist/ilw-grid.css"
         }
     },
+    "main": "./dist/ilw-grid.js",
+    "module": "./dist/ilw-grid.js",
     "scripts": {
         "dev": "vite",
-        "build": "vite build --config vite.build.config.js --emptyOutDir",
+        "build": "tsc --noEmit && vite build --config vite.transpile.config.ts --emptyOutDir && vite build --config vite.build.config.ts --emptyOutDir",
         "preview": "vite preview",
-        "prepack": "npm run build"
+        "prepack": "npm run build",
+        "test:axe": "playwright test",
+        "test:axe:github": "playwright test --config playwright.ci.config.ts",
+        "test": "vitest run --browser.headless",
+        "test:browser": "vitest watch --browser chromium"
     },
     "dependencies": {
         "lit": "3.1.3"
     },
     "devDependencies": {
-        "vite": "^5.2.0"
+        "@illinois-toolkit/ilw-core": "^1.0.5",
+        "@playwright/test": "^1.54.1",
+        "@vitest/browser": "^3.2.4",
+        "playwright": "^1.54.1",
+        "postcss-nested": "^6.2.0",
+        "prettier": "^3.6.2",
+        "typescript": "^5.9.2",
+        "vite": "^7.1.3",
+        "vite-plugin-dts": "^4.5.4",
+        "vitest-browser-lit": "^0.1.0"
     }
 }

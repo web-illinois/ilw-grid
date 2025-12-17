@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Grid Component</title>
 <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
-<link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/3.0.0-alpha/ilw-global.css">
+<link rel="stylesheet" href="https://cdn.toolkit.illinois.edu/ilw-global/3/ilw-global.css">
 <script type="module" src="/src/ilw-grid.js"></script>
 <style>
     div.test {
@@ -19,21 +19,9 @@
     document.addEventListener("DOMContentLoaded", function(event) {
       const params = new URLSearchParams(window.location.search);
       document.querySelectorAll("ilw-grid").forEach(component => {
-        if (params.has('theme')) {
-          component.setAttribute('theme', params.get('theme'));
-        }
-        if (params.has('innerwidth')) {
-          component.setAttribute('innerwidth', params.get('innerwidth'));
-        }
-        if (params.has('width')) {
-          component.setAttribute('width', params.get('width'));
-        }
-        if (params.has('gap')) {
-          component.setAttribute('gap', params.get('gap'));
-        }
-        if (params.has('padding')) {
-          component.setAttribute('padding', params.get('padding'));
-        }
+        params.forEach((value, key) => {
+            component.setAttribute(key, value);
+        });
       });
     });
 
