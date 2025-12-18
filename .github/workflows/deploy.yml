@@ -3,11 +3,6 @@ on:
   release:
     types: [published]
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-    - name: 'Checkout GitHub Action'
-      uses: actions/checkout@v4
   build:
       permissions:
         contents: read
