@@ -4,7 +4,7 @@
     "repository": "github:web-illinois/ilw-grid",
     "private": false,
     "license": "MIT",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "type": "module",
     "files": [
       "src/**",
@@ -13,9 +13,9 @@
     ],
     "exports": {
         ".": {
-            "import": "./src/ilw-grid.js",
-            "require": "./src/ilw-grid.js",
-            "default": "./src/ilw-grid.js"
+            "import": "./dist/ilw-grid.js",
+            "require": "./dist/ilw-grid.js",
+            "default": "./dist/ilw-grid.js"
         },
         "./ilw-grid.css": {
             "import": "./dist/ilw-grid.css"
