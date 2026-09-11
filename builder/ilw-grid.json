@@ -1,12 +1,26 @@
 {
-    "title": "Grid",
-    "tag": "ilw-grid",
-    "github": "https://github.com/web-illinois/ilw-grid/",
-    "type": "web component",
-    "element-name": "ilw-grid",
-    "description": "Creates a grid of items that you can use to display information.",
-    "purpose": "Organize elements in a grid.",
-    "toolkit-version": "1.1",
-    "production-version": "1.2",
-    "development-version": "latest"
+  "title": "Grid",
+  "id": "ilw-grid",
+  "type": "Web Component",
+  "repository-name": "ilw-grid",
+  "description": "Arrange a collection of related items in a responsive grid that adapts cleanly to different screen sizes.",
+  "purpose": "Organize elements in a grid.",
+  "customtemplates": [],
+  "versions": [
+    {
+      "name": "1.0",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.1",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.2",
+      "notes": "",
+      "template": "1.2"
+    }
+  ]
 }
