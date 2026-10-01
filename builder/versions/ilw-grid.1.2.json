@@ -40,7 +40,7 @@
     },
     {
       "name": "padding",
-      "description": "Padding of the text inside the component",
+      "description": "Padding of the text inside the component, defaults to 0 0 40px 0",
       "depreciated": false,
       "value": ""
     }
